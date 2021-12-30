@@ -72,6 +72,7 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
+          echo "${{secrets.POSTGRES_HOST}}"
           docker build --build-arg POSTGRES_USER="${{ secrets.POSTGRES_USER }}" \
             --build-arg POSTGRES_HOST="${{secrets.POSTGRES_HOST}}" \
             --build-arg POSTGRES_PORT="5423" \
