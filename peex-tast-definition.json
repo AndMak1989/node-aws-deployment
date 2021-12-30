@@ -5,11 +5,19 @@
     {
       "dnsSearchDomains": null,
       "environmentFiles": null,
-      "logConfiguration": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/main-fargate-px-taskdefinition",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
       "entryPoint": null,
       "portMappings": [
         {
-          "hostPort": 0,
+          "hostPort": 5000,
           "protocol": "tcp",
           "containerPort": 5000
         }
@@ -26,10 +34,10 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": 128,
+      "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "824117978107.dkr.ecr.us-east-1.amazonaws.com/peex-demo-2",
+      "image": "public.ecr.aws/v3j3k5r2/main-fargate-px-regestry",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,30 +54,36 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "peex-demo-2"
+      "name": "main-fargate-px-container"
     }
   ],
   "placementConstraints": [],
-  "memory": null,
+  "memory": "1024",
   "taskRoleArn": "arn:aws:iam::824117978107:role/ecsTaskExecutionRole",
   "compatibilities": [
-    "EXTERNAL",
-    "EC2"
+    "EC2",
+    "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:824117978107:task-definition/peex-tast-definition:1",
-  "family": "peex-tast-definition",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:824117978107:task-definition/main-fargate-px-taskdefinition:1",
+  "family": "main-fargate-px-taskdefinition",
   "requiresAttributes": [
     {
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
     },
     {
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
     },
     {
       "targetId": null,
@@ -81,16 +95,25 @@
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "ecs.capability.execution-role-ecr-pull"
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.task-eni"
     }
   ],
   "pidMode": null,
   "requiresCompatibilities": [
-    "EC2"
+    "FARGATE"
   ],
-  "networkMode": null,
-  "runtimePlatform": null,
-  "cpu": null,
+  "networkMode": "awsvpc",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": null
+  },
+  "cpu": "512",
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
