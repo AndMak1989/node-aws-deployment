@@ -72,11 +72,11 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker build --build-arg POSTGRES_USER=${{secrets.POSTGRES_USER}} \
-            --build-arg POSTGRES_HOST=${{secrets.POSTGRES_HOST}} \
+          docker build --build-arg POSTGRES_USER="postgres" \
+            --build-arg POSTGRES_HOST="main-fargate-px-db-psql.cwpohdwr2azc.us-east-1.rds.amazonaws.com" \
             --build-arg POSTGRES_PORT="5423" \
-            --build-arg POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}} \
-            --build-arg POSTGRES_DB=${{secrets.POSTGRES_DB}} \
+            --build-arg POSTGRES_PASSWORD="12345678" \
+            --build-arg POSTGRES_DB="postgres" \
           -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
