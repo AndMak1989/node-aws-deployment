@@ -10,10 +10,9 @@ async function start() {
     const app = await NestFactory.create(AppModule)
 
     const config = new DocumentBuilder()
-        .setTitle('Урок по продвинотому BACKEND')
-        .setDescription('Документация REST API')
-        .setVersion('1.0.0')
-        .addTag('ULBI TV')
+        .setTitle('AWS-Deployment')
+        .setDescription('Doc REST API')
+        .addTag('SoftServe')
         .build()
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('/api/docs', app, document)
