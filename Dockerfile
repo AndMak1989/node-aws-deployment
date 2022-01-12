@@ -18,6 +18,8 @@ ENV POSTGRES_PORT $POSTGRES_PORT
 ENV POSTGRES_PASSWORD $POSTGRES_PASSWORD
 ENV POSTGRES_DB $POSTGRES_DB
 
+RUN npm rm -rf node_modules && rm ./package-lock.json
+
 RUN npm install
 
 RUN npm run build
