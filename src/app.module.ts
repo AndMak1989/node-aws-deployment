@@ -12,7 +12,10 @@ import {Post} from "./posts/posts.model";
 import { FilesModule } from './files/files.module';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from 'path';
-
+console.log(process.env.POSTGRES_HOST);
+console.log(process.env.POSTGRES_PORT);
+console.log(process.env.POSTGRES_PASSWORD);
+console.log(process.env.POSTGRES_USER);
 @Module({
     controllers: [],
     providers: [],
@@ -25,11 +28,11 @@ import * as path from 'path';
         // }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
-            host: process.env.POSTGRES_HOST,
-            port: Number(process.env.POSTGRES_PORT),
-            username: process.env.POSTGRES_USER,
-            password: process.env.POSTGRES_PASSWORD,
-            database: process.env.POSTGRES_DB,
+            host: "main-fargate-px-db-psql.cwpohdwr2azc.us-east-1.rds.amazonaws.com",
+            port: 5432,
+            username: "postgres",
+            password: "12345678",
+            database: "postgres",
             models: [User, Role, UserRoles, Post],
             autoLoadModels: true
         }),
