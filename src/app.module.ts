@@ -12,7 +12,10 @@ import {Post} from "./posts/posts.model";
 import { FilesModule } from './files/files.module';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from 'path';
-
+console.log(process.env.POSTGRES_HOST);
+console.log(process.env.POSTGRES_PORT);
+console.log(process.env.POSTGRES_PASSWORD);
+console.log(process.env.POSTGRES_USER);
 @Module({
     controllers: [],
     providers: [],
