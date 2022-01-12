@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.posts</OriginalElement>
+  <nodes>
+    <node x="272.5" y="281.0">75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.user_roles</node>
+    <node x="0.0" y="0.0">75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.users</node>
+    <node x="255.0" y="22.0">75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.roles</node>
+    <node x="0.0" y="237.0">75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.posts</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.user_roles" target="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.roles" relationship="REFERENCES">
+      <point x="27.5" y="-49.5" />
+      <point x="355.0" y="212.0" />
+      <point x="372.5" y="212.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.posts" target="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.users" relationship="REFERENCES">
+      <point x="0.0" y="-93.5" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.user_roles" target="75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.users" relationship="REFERENCES">
+      <point x="-27.5" y="-49.5" />
+      <point x="300.0" y="212.0" />
+      <point x="117.5" y="212.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8783783783783784" showDependencies="false" x="245.0" y="212.0" />
+  <SelectedNodes>
+    <node>75ed1e6c-2a4b-4016-9b05-dc5f3d8ab922.TABLE:nest-course.public.posts</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

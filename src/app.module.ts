@@ -33,6 +33,14 @@ import * as path from 'path';
             models: [User, Role, UserRoles, Post],
             autoLoadModels: true
         }),
+    //     dialect: 'postgres',
+    // host: "main-fargate-px-db-psql.cwpohdwr2azc.us-east-1.rds.amazonaws.com",
+    // port: 5432,
+    // username: "postgres",
+    // password: "12345678",
+    // database: "postgres",
+    // models: [User, Role, UserRoles, Post],
+    // autoLoadModels: true
         UsersModule,
         RolesModule,
         AuthModule,
